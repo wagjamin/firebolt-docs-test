@@ -1,55 +1,58 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "Firebolt Documentation",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#f72a30",
+    "light": "#f72a30",
+    "dark": "#f72a30"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/firebolt-favicon.png",
+   "background": {
+    "decoration": "gradient"
+  },
   "navigation": {
     "tabs": [
       {
         "tab": "Guides",
         "groups": [
           {
-            "group": "Get Started",
+            "group": " ",
             "pages": [
               "index",
-              "quickstart",
-              "development"
-            ]
-          },
-          {
-            "group": "Essentials",
-            "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/settings",
-              "essentials/navigation",
-              "essentials/reusable-snippets"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "API Reference",
-        "groups": [
-          {
-            "group": "API Documentation",
-            "pages": [
-              "api-reference/introduction"
-            ]
-          },
-          {
-            "group": "Endpoint Examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              {
+                "group": "What is Firebolt?",
+                "pages": [
+                  "product",
+                  "product/product-platform"
+                ]
+              },
+              {
+                "group": "Overview",
+                "pages": [
+                  "overview",
+                  "overview/architecture-overview",
+                  {
+                    "group": "Pricing and billing",
+                    "pages": [
+                      "overview/billing"
+                    ]
+                  }
+                ]
+              },
+              {
+                "group": "Guides",
+                "pages": [
+                  "guides",
+                  {
+                    "group": "Manage organization",
+                    "pages": [
+                      "guides/managing-your-organization",
+                      "guides/managing-your-organization/creating-an-organization"
+                    ]
+                  }
+                ]
+              }
             ]
           }
         ]
@@ -58,45 +61,37 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Community",
-          "href": "https://mintlify.com/community",
-          "icon": "slack"
-        },
-        {
           "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
+          "href": "https://www.firebolt.io/knowledge-center/blog",
           "icon": "newspaper"
         }
       ]
     }
   },
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "/logo/firebolt-logo.png",
+    "dark": "/logo/firebolt-logo.png"
   },
   "navbar": {
     "links": [
       {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "label": "Contact us",
+        "href": "https://www.firebolt.io/contact"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Book a demo",
+      "href": "https://www.firebolt.io/book-a-demo"
     }
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "linkedin": "https://www.firebolt.io/book-a-demo",
+      "facebook": "https://www.facebook.com/firebolthq",
+      "youtube": "https://www.youtube.com/channel/UCR94oA7VkFpsriGzwkpYbAA",
+      "instagram": "https://www.instagram.com/firebolt_hq",
+      "x": "https://twitter.com/FireboltHQ"
     }
   }
 }
