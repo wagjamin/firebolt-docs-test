@@ -12,107 +12,96 @@
     "decoration": "gradient"
   },
   "navigation": {
-    "tabs": [
+    "groups": [
       {
-        "tab": "Guides",
-        "groups": [
+        "group": "What is Firebolt?",
+        "pages": [
+          "product",
+          "product/product-platform"
+        ]
+      },
+      {
+        "group": "Overview",
+        "pages": [
+          "Overview",
+          "Overview/architecture-overview",
+          "Overview/data-management",
+          "Overview/engine-consumption",
+          "Overview/engine-fundamentals",
+          "Overview/organizations-accounts",
+          "Overview/table-and-column-compression",
           {
-            "group": " ",
+            "group": "Pricing and billing",
             "pages": [
-              "index",
+              "Overview/billing",
+              "Overview/billing/compute-cost",
+              "Overview/billing/storage-cost"
+            ]
+          },
+          {
+            "group": "Data Modeling",
+            "pages": [
+              "Overview/indexes/using-indexes",
+              "Overview/indexes/aggregating-index",
+              "Overview/indexes/primary-index"
+            ]
+          },
+          {
+            "group": "Queries",
+            "pages": [
+              "Overview/queries",
+              "Overview/queries/understand-query-performance-hbs",
+              "Overview/queries/understand-query-performance-subresult",
+              "Overview/queries/understand-spilling"
+            ]
+          },
+          {
+            "group": "Security",
+            "pages": [
+              "Overview/Security/security",
               {
-                "group": "What is Firebolt?",
+                "group": "Role-Based Access Control",
                 "pages": [
-                  "product",
-                  "product/product-platform"
-                ]
-              },
-              {
-                "group": "Overview",
-                "pages": [
-                  "overview/architecture-overview",
-                  "overview/data-management",
-                  "overview/engine-consumption",
-                  "overview/engine-fundamentals",
-                  "overview/organizations-accounts",
-                  "overview/table-and-column-compression",
+                  "Overview/Security/Role-Based Access Control",
+                  "Overview/Security/Role-Based Access Control/account-permissions",
+                  "Overview/Security/Role-Based Access Control/engine-permissions",
+                  "Overview/Security/Role-Based Access Control/user-permissions",
+                  "Overview/Security/Role-Based Access Control/role-permissions",
+                  "Overview/Security/Role-Based Access Control/ownership",
+                  "Overview/Security/Role-Based Access Control/check-privileges",
                   {
-                    "group": "Pricing and billing",
+                    "group": "Database Permissions",
                     "pages": [
-                      "overview/billing/overview",
-                      "overview/billing/compute-cost",
-                      "overview/billing/storage-cost"
+                      "Overview/Security/Role-Based Access Control/database-permissions",
+                      "Overview/Security/Role-Based Access Control/database-permissions/schema-permissions",
+                      "Overview/Security/Role-Based Access Control/database-permissions/table-permissions",
+                      "Overview/Security/Role-Based Access Control/database-permissions/view-permissions"
+
                     ]
                   },
                   {
-                    "group": "Data Modeling",
+                    "group": "Role Management",
                     "pages": [
-                      "overview/indexes/using-indexes",
-                      "overview/indexes/aggregating-index",
-                      "overview/indexes/primary-index"
-                    ]
-                  },
-                  {
-                    "group": "Queries",
-                    "pages": [
-                      "overview/queries/overview",
-                      "overview/queries/understand-query-performance-hbs",
-                      "overview/queries/understand-query-performance-subresult",
-                      "overview/queries/understand-spilling"
-                    ]
-                  },
-                  {
-                    "group": "Security",
-                    "pages": [
-                      "overview/Security/security",
-                      {
-                        "group": "Role-Based Access Control",
-                        "pages": [
-                          "overview/Security/Role-Based Access Control/overview",
-                          "overview/Security/Role-Based Access Control/account-permissions",
-                          "overview/Security/Role-Based Access Control/engine-permissions",
-                          "overview/Security/Role-Based Access Control/user-permissions",
-                          "overview/Security/Role-Based Access Control/role-permissions",
-                          "overview/Security/Role-Based Access Control/ownership",
-                          "overview/Security/Role-Based Access Control/check-privileges",
-                          {
-                            "group": "Database Permissions",
-                            "pages": [
-                              "overview/Security/Role-Based Access Control/database-permissions/overview",
-                              "overview/Security/Role-Based Access Control/database-permissions/schema-permissions",
-                              "overview/Security/Role-Based Access Control/database-permissions/table-permissions",
-                              "overview/Security/Role-Based Access Control/database-permissions/view-permissions"
-                              
-                            ]
-                          },
-                          {
-                            "group": "Role Management",
-                            "pages": [
-                              "overview/Security/Role-Based Access Control/role-management/overview",
-                              "overview/Security/Role-Based Access Control/role-management/system-roles",
-                              "overview/Security/Role-Based Access Control/role-management/custom-roles"
-                              
-                            ]
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "group": "Guides",
-                "pages": [
-                  "guides",
-                  {
-                    "group": "Manage organization",
-                    "pages": [
-                      "guides/managing-your-organization",
-                      "guides/managing-your-organization/creating-an-organization"
+                      "Overview/Security/Role-Based Access Control/role-management",
+                      "Overview/Security/Role-Based Access Control/role-management/system-roles",
+                      "Overview/Security/Role-Based Access Control/role-management/custom-roles"
                     ]
                   }
                 ]
               }
+            ]
+          }
+        ]
+      },
+      {
+        "group": "Guides",
+        "pages": [
+          "Guides",
+          {
+            "group": "Manage organization",
+            "pages": [
+              "Guides/managing-your-organization",
+              "Guides/managing-your-organization/creating-an-organization"
             ]
           }
         ]
