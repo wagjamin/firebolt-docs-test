@@ -27,7 +27,7 @@ To submit a synchronous query programatically, use a Firebolt Driver to send an 
 Use a Firebolt driver to connect to a Firebolt database, authenticate securely, and run SQL statements with minimal setup. The driver provides built-in methods for running SQL statements, handling responses, and managing connections. All Firebolt drivers support synchronous queries. See the documentation for each driver for specific details on how to submit synchronous queries programmatically:
 
 * [Node.js SDK](/guides/developing-with-firebolt/connecting-with-nodejs) &ndash; Firebolt Node.js SDK
-* [Python SDK](/guides/developing-with-firebolt/connecting-with-Python) &ndash; Firebolt Python SDK
+* [Python SDK](/guides/developing-with-firebolt/connecting-with-python) &ndash; Firebolt Python SDK
 * [JDBC Driver](/guides/developing-with-firebolt/connecting-with-jdbc) &ndash; Firebolt JDBC Driver
 * [SQLAlchemy](/guides/developing-with-firebolt/connecting-with-sqlalchemy) &ndash; Firebolt SQLAlchemy adapter
 * [.NET SDK](/guides/developing-with-firebolt/connecting-with-net-sdk) &ndash; Firebolt .NET SDK
@@ -37,7 +37,7 @@ Use a Firebolt driver to connect to a Firebolt database, authenticate securely, 
 
 After setting up a Firebolt driver, submit a query to verify connectivity and validate your credentials.
 
-Submitting a query through a Firebolt drivers and SDKs have similar formats. The following code example shows how to establish a connection to a Firebolt database using a service account's credentials, runs a simple `SELECT` statement, retrieves and prints the result using the [Python SDK](/guides/developing-with-firebolt/connecting-with-Python). For other languages, consult the specific driver for details.
+Submitting a query through a Firebolt drivers and SDKs have similar formats. The following code example shows how to establish a connection to a Firebolt database using a service account's credentials, runs a simple `SELECT` statement, retrieves and prints the result using the [Python SDK](/guides/developing-with-firebolt/connecting-with-python). For other languages, consult the specific driver for details.
 
 ```python
 from firebolt.db import connect
