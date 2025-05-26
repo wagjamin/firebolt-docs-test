@@ -38,12 +38,12 @@ To submit an asynchronous query via a raw HTTP request, you must use Firebolt pr
 
 Use a Firebolt driver to connect to a Firebolt database, authenticate securely, and run SQL statements with minimal setup. The driver provides built-in methods for running SQL statements, handling responses, and managing connections. Only some Firebolt drivers support synchronous queries. See the documentation for each driver for specific details on how to submit asynchronous queries programmatically:
 
-* [Python SDK](/guides/developing-with-firebolt/connecting-with-Python) &ndash; Firebolt Python SDK
+* [Python SDK](/guides/developing-with-firebolt/connecting-with-python) &ndash; Firebolt Python SDK
 * [Node.js](/guides/developing-with-firebolt/connecting-with-nodejs) &ndash; Firebolt Node SDK
 
 ## Submit a query
 
-Submitting a query through a Firebolt drivers and SDKs have similar formats. The following code example shows how to submit an asynchronous query using the [Python SDK](/guides/developing-with-firebolt/connecting-with-Python). For other languages, consult the specific driver for details:
+Submitting a query through a Firebolt drivers and SDKs have similar formats. The following code example shows how to submit an asynchronous query using the [Python SDK](/guides/developing-with-firebolt/connecting-with-python). For other languages, consult the specific driver for details:
 
 The following code example establishes a connection to a Firebolt database using a service account, submits an asynchronous `INSERT` statement that groups generated numbers, periodically checks its run status, and then retrieves the row count from the `example` table:
 

@@ -103,7 +103,7 @@ SELECT * FROM LIST_OBJECTS(url => 's3://firebolt-publishing-public/help_center_a
 
 | object_name (TEXT)                                          | object_type (TEXT) | object_bytes (BIGINT) |  last_modified (TIMESTAMPTZ) |
 |:------------------------------------------------------------|:-------------------|:----------------------|:-----------------------------|
-| help_center_/assets/firebolt_sample_dataset/                 | folder             | NULL                  | NULL                         |
+| help_center_assets/firebolt_sample_dataset/                 | folder             | NULL                  | NULL                         |
 
 The following code example shows how to list all objects such as files, folders, and associated metadata, that start with a specified prefix in an Amazon S3 bucket:
 
@@ -115,17 +115,17 @@ SELECT * FROM LIST_OBJECTS(url => 's3://firebolt-publishing-public/help_center_a
 
 | object_name (TEXT)                                          | object_type (TEXT) | object_bytes (BIGINT) |  last_modified (TIMESTAMPTZ) |
 |:------------------------------------------------------------|:-------------------|:----------------------|:-----------------------------|
-| help_center_/assets/firebolt_sample_dataset/players.json     | file               | 1,421,277             | 2023-02-27 10:49:13+01       |
+| help_center_assets/firebolt_sample_dataset/players.json     | file               | 1,421,277             | 2023-02-27 10:49:13+01       |
 |:------------------------------------------------------------|:-------------------|:----------------------|:-----------------------------|
-| help_center_/assets/firebolt_sample_dataset/levels.csv       | file               | 83,596                | 2023-02-27 11:06:52+01       |
+| help_center_assets/firebolt_sample_dataset/levels.csv       | file               | 83,596                | 2023-02-27 11:06:52+01       |
 |:------------------------------------------------------------|:-------------------|:----------------------|:-----------------------------|
-| help_center_/assets/firebolt_sample_dataset/tournaments.csv  | file               | 83,351                | 2022-12-15 15:34:14+01       |
+| help_center_assets/firebolt_sample_dataset/tournaments.csv  | file               | 83,351                | 2022-12-15 15:34:14+01       |
 |:------------------------------------------------------------|:-------------------|:----------------------|:-----------------------------|
-| help_center_/assets/firebolt_sample_dataset/games.json       | file               | 872                   | 2023-02-27 13:18:54+01       |
+| help_center_assets/firebolt_sample_dataset/games.json       | file               | 872                   | 2023-02-27 13:18:54+01       |
 |:------------------------------------------------------------|:-------------------|:----------------------|:-----------------------------|
-| help_center_/assets/firebolt_sample_dataset/rankings/        | folder             | NULL                  | NULL                         |
+| help_center_assets/firebolt_sample_dataset/rankings/        | folder             | NULL                  | NULL                         |
 |:------------------------------------------------------------|:-------------------|:----------------------|:-----------------------------|
-| help_center_/assets/firebolt_sample_dataset/playstats/       | folder             | NULL                  | NULL                         |
+| help_center_assets/firebolt_sample_dataset/playstats/       | folder             | NULL                  | NULL                         |
 
 The following code examples show how to list all objects such as files and associated metadata, that start with a specified prefix in an Amazon S3 bucket. The URLs ending with the prefixes `lev` or `levels.csv` return identical results because both are valid matches for the `levels.csv` file as follows:
 
@@ -143,7 +143,7 @@ SELECT * FROM LIST_OBJECTS(url => 's3://firebolt-publishing-public/help_center_a
 
 | object_name (TEXT)                                          | object_type (TEXT) | object_bytes (BIGINT) |  last_modified (TIMESTAMPTZ) |
 |:------------------------------------------------------------|:-------------------|:----------------------|:-----------------------------|
-| help_center_/assets/firebolt_sample_dataset/levels.csv       | file               | 83,596                | 2023-02-27 11:06:52+01       |
+| help_center_assets/firebolt_sample_dataset/levels.csv       | file               | 83,596                | 2023-02-27 11:06:52+01       |
 
 
 The following code example shows how to use your Amazon credentials to list objects in an Amazon S3 bucket that is not publicly accessible:
