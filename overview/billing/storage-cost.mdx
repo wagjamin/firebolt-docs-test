@@ -1,10 +1,11 @@
 ---
+description: How Firebolt bills for storage
 sidebarTitle: Explore storage cost
 title: Explore storage cost
 ---
 
 
-You can use data from the [`information_schema.storage_billing`](/sql_reference/information-schema/storage-billing.md ) and [`information_schema.storage_history`](/sql_reference/information-schema/storage-history.md ) views to analyze and optimize storage costs across different regions, accounts, and data usage trends. The following queries will guide you in tracking storage expenses, understanding regional cost variations, and identifying storage inefficiencies.
+You can use data from the [`information_schema.storage_billing`](/reference-sql/information-schema/storage-billing) and [`information_schema.storage_history`](/reference-sql/information-schema/storage-history) views to analyze and optimize storage costs across different regions, accounts, and data usage trends. The following queries will guide you in tracking storage expenses, understanding regional cost variations, and identifying storage inefficiencies.
 
 ## Examples
 
@@ -53,7 +54,7 @@ ORDER BY usage_date;
 
 ### Identify storage cost by region
 
-Use [`information_schema.storage_billing`](/sql_reference/information-schema/storage-billing.md ) inside a query to understand which regions incur the highest storage costs, helping you optimize resource allocation based on geographical pricing differences. 
+Use [`information_schema.storage_billing`](/reference-sql/information-schema/storage-billing) inside a query to understand which regions incur the highest storage costs, helping you optimize resource allocation based on geographical pricing differences. 
 
 The following code example calculates the total storage cost for each region and sorts the results in descending order of total cost:
 
@@ -91,7 +92,7 @@ GROUP BY is_credit;
 
 ### Monitor active vs inactive data trends
 
-Inactive data refers to data that is no longer actively used or is infrequently accessed but still consumes storage resources. Retaining large volumes of inactive data can result in higher costs and wasted storage. Use [`information_schema.storage_history`](/sql_reference/information-schema/storage-history.md ) to identify this data so that you can make decisions about optimizing storage to reduce unnecessary expenses.
+Inactive data refers to data that is no longer actively used or is infrequently accessed but still consumes storage resources. Retaining large volumes of inactive data can result in higher costs and wasted storage. Use [`information_schema.storage_history`](/reference-sql/information-schema/storage-history) to identify this data so that you can make decisions about optimizing storage to reduce unnecessary expenses.
 
 The following code example shows daily trends for active and inactive data in Gibibyte (GiB), which is equal to 1,073,741,824 bytes:
 

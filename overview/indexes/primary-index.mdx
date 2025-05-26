@@ -1,4 +1,5 @@
 ---
+description: Primary index overview
 sidebarTitle: Primary index
 title: Primary index
 ---
@@ -92,7 +93,7 @@ PRIMARY INDEX SubmitDate, EngineName;
     This approach ensures consistency and avoids disrupting the primary index during updates or deletions.  
   - **fragmentation metric**:  
     Use the `information_schema.tables` to access the fragmentation metric to assess fragmentation levels and determine whether maintenance actions are needed.  
-  - **[VACUUM](/sql_reference/commands/data-management/vacuum.md ) command**:  
+  - **[VACUUM](/reference-sql/commands/data-management/vacuum) command**:  
     You can use the `VACUUM` command to clean up rows flagged for deletion and reorganize fragmented data. It is particularly useful when large numbers of rows have been deleted or updates have introduced significant fragmentation.
 
 * **Query Performance Overhead**:  
@@ -105,7 +106,7 @@ Using Firebolt’s primary indexes can help you enhance your query performance, 
 
 ## Advanced option: index granularity
 
-The `index_granularity` [storage parameter](/sql_reference/commands/data-definition/create-fact-dimension-table.md #storage-parameters),
+The `index_granularity` [storage parameter](/reference-sql/commands/data-definition/create-fact-dimension-table#storage-parameters),
 specified in the `WITH` clause, is an advanced setting that may be useful for improving performance in very specific query patterns.
 It defines the maximum number of rows per granule, which directly impacts how data is indexed and queried.
 
@@ -130,4 +131,5 @@ Use the default value of `index_granularity`, which should translate to good per
 * If most of your queries scan large portions of the table, such as a large bounded range of primary index columns, a **higher** `index_granularity` value is more efficient, as it reduces index memory usage and overhead introduced by each granule boundary.
 
 If you want to adjust `index_granularity`, start with the default value, then create duplicate tables with different settings to compare both the query latency and memory usage.
+
 

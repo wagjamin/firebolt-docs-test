@@ -1,12 +1,12 @@
 ---
-sidebarTitle: Engine Fundamentals
+description: Learn fundamental concepts about Firebolt Engines.
+sidebarTitle: Overview
 title: Engine Fundamentals
 ---
 
 
 
-
- Engines are compute resources that process data and serve queries in Firebolt. Use engines to load data into Firebolt and run queries on the ingested data. 
+Engines are compute resources that process data and serve queries in Firebolt. Use engines to load data into Firebolt and run queries on the ingested data.
 
 Firebolt engines provide **full workload isolation**, so that multiple workloads run independently while sharing the same data. Engines are **decoupled from databases**, meaning:
 
@@ -22,7 +22,7 @@ Firebolt engines provide **full workload isolation**, so that multiple workloads
 * [Multi-dimensional elasticity](#multi-dimensional-elasticity) &ndash; Scale engines dynamically by adjusting engine attributes without stopping workloads.
 * [Connecting to engines](#connecting-to-engines) &ndash; How to connect to a Firebolt engine using the UI, Engine URL, or third-party tools.
 * [Monitoring engine usage](#monitoring-engine-usage) &ndash; Track engine performance using observability views in `information_schema` to optimize resource allocation.
-* [Engine governance and security](#engine-governance-and-security) &ndash; Control engine access using [Role-Based Access Control (RBAC)](/Overview/Security/Role-Based Access Control/index.md ) and account-level isolation to enforce security policies.
+* [Engine governance and security](#engine-governance-and-security) &ndash; Control engine access using [Role-Based Access Control (RBAC)](/overview/security/rbac) and account-level isolation to enforce security policies.
 * [Viewing and understanding engine status](#viewing-and-understanding-engine-status) &ndash; Learn how to use `SHOW ENGINES` to check the status of all engines, including running, resizing, and stopped states.
 
 
@@ -30,33 +30,33 @@ Firebolt engines provide **full workload isolation**, so that multiple workloads
 
 Engines in Firebolt are defined by four attributes: **Type**, **Family**, **Nodes**, and **Clusters**. These attributes determine the engine’s configuration and scaling options.
 
-**Type**
-
+**Type** <br/>
 The `TYPE` of engine defines the **compute node size** used as a building block for an engine. They are available in Small, Medium, Large, and X-Large sizes. Change the node type to **vertically scale** up or down. Small and medium engines are available for use right away. If you want to use a large or extra-large engine, reach out to [support@firebolt.io](mailto:support@firebolt.io).
 
-**Family**
-
+**Family** <br/>
 Compute nodes can be storage-optimized with larger cache sizes or compute-optimized which have smaller caches. The default is storage-optimized.
 
-**Nodes**
-
+**Nodes** <br/>
 This attribute represents the number (1 - 128) of compute nodes, allowing granular horizontal scaling to fine-tune query performance characteristics while avoiding overprovisioning and unnecessary cost. Both scaling in and out are supported.
 
-**Clusters**
-
+**Clusters** <br/>
 A cluster is a collection of compute resources, described by “Type” and “Nodes” attributes. A given Firebolt engine can contain one or more clusters. The maximum number of clusters is specified by the max_clusters attribute. Only homogeneous cluster configurations (clusters with the same number of Nodes and Type) are supported within a single engine. Users can leverage the “min_clusters” and "max_clusters" attributes to support query concurrency scaling.
 
-<div className="text-center">
-  <img src="/assets/images/engine_cluster_type_M.png" alt="/1" width="600" className="mx-auto" />
-  <p className="text-sm text-gray-500 mt-2">An engine cluster with four nodes of type 'M'</p>
-</div><div className="text-center">
-  <img src="/assets/images/Engine_two_clusters_type_M.png" alt="/1" width="600" className="mx-auto" />
-  <p className="text-sm text-gray-500 mt-2">A Firebolt engine with two clusters, each cluster containing four nodes of type 'M'</p>
-</div>
+<center>
+<figure>
+    <img src="/assets/images/engine_cluster_type_M.png" alt="An engine cluster in Firebolt" width="600"/>
+    <figcaption><b>An engine cluster with four nodes of type M</b></figcaption>
+</figure>
 
-The four attributes:  `TYPE`, `NODES`, `MIN_CLUSTERS` and "MAX_CLUSTERS" &ndash; form the configuration of an engine.
+<figure>
+    <img src="/assets/images/Engine_two_clusters_type_M.png" alt="A Firebolt engine with two clusters, each cluster containing four nodes of type 'M'" width="600"/>
+    <figcaption><b>A Firebolt engine with two clusters, each cluster containing four nodes of type M</b></figcaption>
+</figure>
+</center>
 
-To create an engine, use the [CREATE ENGINE command](/sql_reference/commands/engines/create-engine.md ), specifying the node type to be used for the engine, number of clusters and number of nodes per cluster.
+The four attributes `TYPE`, `NODES`, `MIN_CLUSTERS` and `MAX_CLUSTERS` form the configuration of an engine.
+
+To create an engine, use the [CREATE ENGINE command](/reference-sql/commands/engines/create-engine), specifying the node type to be used for the engine, number of clusters and number of nodes per cluster.
 
 The following code example creates two clusters, each containing four nodes of type `M`, from the compute-optimized family:
 
@@ -69,7 +69,7 @@ MIN_CLUSTERS = 2;
 MAX_CLUSTERS = 2;
 ```
 
-For a full list of engine attributes, see [CREATE ENGINE](../sql_reference/commands/engines/create-engine)
+For a full list of engine attributes, see [CREATE ENGINE](/reference-sql/commands/engines/create-engine)
 
 
 ## Multi-dimensional elasticity
@@ -84,7 +84,7 @@ Firebolt engines enable dynamic and fully online scaling operations, meaning you
 
 You can scale up or down using the engine type and family, scaling out or in with number of nodes and add or remove clusters for concurrency scaling. This multidimensional scaling allows you to fine-tune the price-performance characteristics of engines and dynamically scale your compute resources based on your workload requirements.
 
-Use the [ALTER ENGINE](/sql_reference/commands/engines/alter-engine.md ) to modify the configuration of an engine to dynamically scale the engine even while it is running, without impacting the workload. 
+Use the [ALTER ENGINE](/reference-sql/commands/engines/alter-engine) to modify the configuration of an engine to dynamically scale the engine even while it is running, without impacting the workload. 
 
 **Best practices**
 
@@ -110,7 +110,7 @@ The following code example changes more than one attribute at the same time:
 ALTER ENGINE MyEngine SET NODES = 3 TYPE = L FAMILY = COMPUTE_OPTIMIZED;
 ```
 
-For more information on modifying engines, see [ALTER ENGINE](/sql_reference/commands/engines/alter-engine.md ).
+For more information on modifying engines, see [ALTER ENGINE](/reference-sql/commands/engines/alter-engine).
 
 
 ## Connecting to engines
@@ -119,7 +119,7 @@ You can connect to an engine using the following methods:
 
 * Firebolt's [user interface](https://go.firebolt.io/login).
 * An engine URL.
-* Third-party [connectors](/Guides/integrations/integrations.md ) such as Airflow and DBT.
+* Third-party [connectors](/guides/integrations) such as Airflow and DBT.
 
 The engine URL is based on your account name and org name, with the following format:
 
@@ -136,9 +136,9 @@ You can use the observability views in `information_schema` to track engine perf
 | `engine_metrics_history` | Captures CPU and RAM usage every **30 seconds** and retains data for **30 days**. |
 | `engine_running_queries` | Lists active queries and queries waiting to be processed. |
 
-You can use the information in the previous [information_schema views](/sql_reference/information-schema/index.md ) to decide whether you need to change the engine configuration type, number of nodes or clusters based on your workload needs.
+You can use the information in the previous [information_schema views](/reference-sql/information-schema) to decide whether you need to change the engine configuration type, number of nodes or clusters based on your workload needs.
 
-The [engine_metrics_history](/sql_reference/information-schema/engine-metrics-history.md ) view gathers engine resource utilization metrics such as CPU and RAM consumption at a given time snapshot. Utilization snapshots are captured every 30 seconds and retained for 30 days, allowing users to understand engine utilization and consumption trends. 
+The [engine_metrics_history](/reference-sql/information-schema/engine-metrics-history) view gathers engine resource utilization metrics such as CPU and RAM consumption at a given time snapshot. Utilization snapshots are captured every 30 seconds and retained for 30 days, allowing users to understand engine utilization and consumption trends. 
 
 The following code example retrieves CPU and RAM usage for `MyEngine`:
 
@@ -149,7 +149,7 @@ WHERE engine_name = 'MyEngine'
 ORDER BY event_time DESC;
 ```
 
-The [engine_running_queries](/sql_reference/information-schema/engine-running-queries.md ) view exposes information about queries currently running or waiting to be run in the system.  Based on the number of queries that are queued and waiting to run, you can modify the engine configuration to best suit your performance requirements.
+The [engine_running_queries](/reference-sql/information-schema/engine-running-queries) view exposes information about queries currently running or waiting to be run in the system.  Based on the number of queries that are queued and waiting to run, you can modify the engine configuration to best suit your performance requirements.
 
 
 The following code example retrieves currently running queries:
@@ -161,7 +161,7 @@ FROM information_schema.engine_running_queries;
 
 If the previous query shows that queries remain in the queue for too long, increase the number of nodes or clusters. 
 
-To understand how information views can help with engine resizing, see [Working with Engines](../Guides/operate-engines/sizing-engines).
+To understand how information views can help with engine resizing, see [Working with Engines](/guides/operate-engines/sizing-engines).
 
 
 ## Engine governance and security
@@ -174,7 +174,7 @@ You can create multiple accounts within a given organization, where each account
 
 **RBAC for engine management**
 
-The Firebolt [RBAC model](/Guides/security/rbac.md ) allows administrators to control user actions on resources that are created within a given account. For example, administrators can control which users are allowed to modify the configuration of engines and control which users can create new engines. 
+The Firebolt [RBAC model](/guides/security/rbac) allows administrators to control user actions on resources that are created within a given account. For example, administrators can control which users are allowed to modify the configuration of engines and control which users can create new engines. 
 
 The following code example creates an engine administrator role and grants it full permissions on `MyEngine`:
 
@@ -183,11 +183,11 @@ CREATE ROLE engine_admin;
 GRANT ALL PRIVILEGES ON ENGINE MyEngine TO engine_admin;
 ```
 
-For more information on using RBAC for engines, see [Governing Engines](../Guides/operate-engines/rbac-for-engines). 
+For more information on using RBAC for engines, see [Governing Engines](/guides/operate-engines/rbac-for-engines). 
 
 ## Viewing and understanding engine status
 
-Use [SHOW ENGINES](/sql_reference/commands/metadata/show-engines.md ) to list all engines and their statuses in your Firebolt account as follows:
+Use [SHOW ENGINES](/reference-sql/commands/metadata/show-engines) to list all engines and their statuses in your Firebolt account as follows:
 
 | `SHOW ENGINES` and UI |   Description                     
 | :-------------------- | :------------------------------- | 
@@ -197,6 +197,7 @@ Use [SHOW ENGINES](/sql_reference/commands/metadata/show-engines.md ) to list al
 | DRAINING              | The engine is completing running queries before shutting down. |
 | STOPPING              | The engine is shutting down and cannot accept new queries. |
 | STOPPED               | The engine is fully stopped and not available to run queries. |
+
 
 
 

@@ -1,4 +1,5 @@
 ---
+description: Aggregating index overview
 sidebarTitle: Aggregating index
 title: Aggregating index
 ---
@@ -78,7 +79,7 @@ Because the code example precomputes `SUM` and `COUNT`, subsequent queries using
 
 **Vacuuming**
 
-  To ensure optimal query performance, you should periodically **vacuum** the aggregating index. [VACUUM](/sql_reference/commands/data-management/vacuum.md ) helps to:
+  To ensure optimal query performance, you should periodically **vacuum** the aggregating index. [VACUUM](/reference-sql/commands/data-management/vacuum) helps to:
 
   * Defragment data in the aggregating index table.
   * Remove stale or deleted items from disk after `DELETE` operations on the base table.
@@ -87,3 +88,4 @@ Because the code example precomputes `SUM` and `COUNT`, subsequent queries using
 
   * **Frequent batch inserts** &ndash; These inserts can lead to fragmented data in the aggregating index table.
   * **Base table mutations** &ndash; Operations like `DELETE` or `UPDATE` on the base table can also cause fragmentation, impacting query performance.
+

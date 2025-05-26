@@ -1,4 +1,5 @@
 ---
+description: How to understand history-based query optimization
 sidebarTitle: Understanding history-based optimization
 title: Understanding history-based optimization
 ---
@@ -37,7 +38,7 @@ After running the query, the collected telemetry is fed back into Firebolt's his
 When you run the next query, the query optimizer accesses the telemetry that was collected in that history snapshot and extracts from it statistical information.
 Consequently, previously run queries aid the query optimizer in finding better query plans for subsequent queries and thereby improve performance.
 
-<img src="../../assets/images/history-based-optimization.png" alt="Telemetry data flows back from the runtime into the query optimizer where the next run is planned." width="700"/>
+<img src="/assets/images/history-based-optimization.png" alt="Telemetry data flows back from the runtime into the query optimizer where the next run is planned." width="700"/>
 
 ### How recording query history works
 
@@ -72,9 +73,10 @@ An example of the `EXPLAIN (statistics)` output below shows `source: history`, a
 [Logical Profile]: [source: history]
 ```
 
-For more information about output from `EXPLAIN (statistics)`, including various possible values that the source field can take, see [Explain: Example with statistics](../../sql_reference/commands/queries/explain.html#example-with-statistics).
+For more information about output from `EXPLAIN (statistics)`, including various possible values that the source field can take, see [Explain: Example with statistics](/reference-sql/commands/queries/explain#example-with-statistics).
 
 The `EXPLAIN(statistics)` output will not show `source:history` during the first run of an alternate query plan if the optimizer finds that the initial query plan was not optimal. This absence occurs because the alternative plan has not yet gathered telemetry data during its initial run.
 In the next execution of the same query, the optimizer understands that it should choose an alternative plan to avoid the slow execution.
 This means, that history-based statistics are in effect, but we may not see `history` shown in sources of the `EXPLAIN (statistics)` output for the new run.
 It could be that for the alternative plan we have not collected its execution telemetry yet.
+

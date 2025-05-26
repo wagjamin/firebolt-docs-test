@@ -1,8 +1,8 @@
 ---
+description: Learn about custom compression for managed tables
 sidebarTitle: Table and Column Compression
 title: Table and Column Compression
 ---
-
 
 
 
@@ -17,7 +17,9 @@ Firebolt supports the following compression algorithms:
 - `lz4`&ndash; Default option; fast compression and decompression, ideal for general workloads. 
 - `zstd`&ndash; Higher compression ratios at the cost of increased CPU usage; useful for large datasets. 
 
-<Note>Disabling compression with `NONE` is not supported. Firebolt always compresses data using one of the supported algorithms. </Note>
+<Note>
+Disabling compression with `NONE` is not supported. Firebolt always compresses data using one of the supported algorithms. 
+</Note>
 
 ## Specify compression settings
 
