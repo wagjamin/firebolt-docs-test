@@ -3,9 +3,9 @@
   "theme": "mint",
   "name": "Firebolt Documentation",
   "colors": {
-    "primary": "#f72a30",
-    "light": "#f72a30",
-    "dark": "#f72a30"
+    "primary": "#f72a31",
+    "light": "#f72a31",
+    "dark": "#f72a31"
   },
   "favicon": "/firebolt-favicon.png",
   "background": {
