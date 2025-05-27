@@ -9,39 +9,119 @@ title: Release notes archive
 We provide an archive of release notes for your historical reference.
 
 
-**INCLUDE WAS HERE**
 
-**INCLUDE WAS HERE**
 
-**INCLUDE WAS HERE**
+import ReleaseNotesReleaseNotes419 from '/snippets/release_notes/release_notes_4_19.mdx';
 
-**INCLUDE WAS HERE**
+<ReleaseNotesReleaseNotes419  />
 
-**INCLUDE WAS HERE**
 
-**INCLUDE WAS HERE**
 
-**INCLUDE WAS HERE**
 
-**INCLUDE WAS HERE**
+import ReleaseNotesReleaseNotes418 from '/snippets/release_notes/release_notes_4_18.mdx';
 
-**INCLUDE WAS HERE**
+<ReleaseNotesReleaseNotes418  />
 
-**INCLUDE WAS HERE**
 
-**INCLUDE WAS HERE**
 
-**INCLUDE WAS HERE**
 
-**INCLUDE WAS HERE**
+import ReleaseNotesReleaseNotes417 from '/snippets/release_notes/release_notes_4_17.mdx';
 
-**INCLUDE WAS HERE**
+<ReleaseNotesReleaseNotes417  />
 
-**INCLUDE WAS HERE**
 
-**INCLUDE WAS HERE**
 
-## DB version 4.3
+
+import ReleaseNotesReleaseNotes416 from '/snippets/release_notes/release_notes_4_16.mdx';
+
+<ReleaseNotesReleaseNotes416  />
+
+
+
+
+import ReleaseNotesReleaseNotes415 from '/snippets/release_notes/release_notes_4_15.mdx';
+
+<ReleaseNotesReleaseNotes415  />
+
+
+
+
+import ReleaseNotesReleaseNotes414 from '/snippets/release_notes/release_notes_4_14.mdx';
+
+<ReleaseNotesReleaseNotes414  />
+
+
+
+
+import ReleaseNotesReleaseNotes413 from '/snippets/release_notes/release_notes_4_13.mdx';
+
+<ReleaseNotesReleaseNotes413  />
+
+
+
+
+import ReleaseNotesReleaseNotes412 from '/snippets/release_notes/release_notes_4_12.mdx';
+
+<ReleaseNotesReleaseNotes412  />
+
+
+
+
+import ReleaseNotesReleaseNotes411 from '/snippets/release_notes/release_notes_4_11.mdx';
+
+<ReleaseNotesReleaseNotes411  />
+
+
+
+
+import ReleaseNotesReleaseNotes410 from '/snippets/release_notes/release_notes_4_10.mdx';
+
+<ReleaseNotesReleaseNotes410  />
+
+
+
+
+import ReleaseNotesReleaseNotes49 from '/snippets/release_notes/release_notes_4_9.mdx';
+
+<ReleaseNotesReleaseNotes49  />
+
+
+
+
+import ReleaseNotesReleaseNotes48 from '/snippets/release_notes/release_notes_4_8.mdx';
+
+<ReleaseNotesReleaseNotes48  />
+
+
+
+
+import ReleaseNotesReleaseNotes47 from '/snippets/release_notes/release_notes_4_7.mdx';
+
+<ReleaseNotesReleaseNotes47  />
+
+
+
+
+import ReleaseNotesReleaseNotes46 from '/snippets/release_notes/release_notes_4_6.mdx';
+
+<ReleaseNotesReleaseNotes46  />
+
+
+
+
+import ReleaseNotesReleaseNotes45 from '/snippets/release_notes/release_notes_4_5.mdx';
+
+<ReleaseNotesReleaseNotes45  />
+
+
+
+
+import ReleaseNotesReleaseNotes440 from '/snippets/release_notes/release_notes_4_4_0.mdx';
+
+<ReleaseNotesReleaseNotes440  />
+
+
+## Firebolt Release Notes - Version 4.3
 **August 2024**
 
 ### New Features
@@ -104,7 +184,7 @@ The default value for the `CASE_SENSITIVE_COLUMN_MAPPING` parameter in `COPY FRO
 
 The result data type of the `extract` function for epoch, second, and millisecond was changed to return the type Numeric(38,9) instead of a narrower Numeric type. For example, `select extract(second from '2024-04-22 07:10:20'::timestamp);` now returns Numeric(38,9) instead of Numeric(8,6).
 
-## DB version 4.2
+## Firebolt Release Notes - Version 4.2
 **July 2024**
 
 ### New features
@@ -182,7 +262,7 @@ We have introduced several updates to role and privilege management:
   * `Information_object_privileges` includes more privileges. Switching to to a specific user database (e.g by executing `use database db`) will only show privileges relevant for that database. Account-level privileges no longer show up when attached to a specific database. 
   * Every newly created user is granted with a `public` role. This grant can be revoked.
 
-## DB version 4.1
+## Firebolt Release Notes - Version 4.1
 **June 2024**
 
 * [Resolved issues](#resolved-issues)
@@ -192,7 +272,7 @@ We have introduced several updates to role and privilege management:
 
 * Fixed an issue causing errors when using `WHERE column IN (...)` filters on external table scans.
   
-## DB version 4.0
+## Firebolt Release Notes - Version 4.0
 **June 2024**
 
 * [Enhancements, changes, and new integrations](#enhancements-changes-and-new-integrations)
@@ -236,7 +316,7 @@ cast(a as array(int)).
 
 Casts now behave the same across the product and adhere to the list of supported casts. Some usages of casts (explicit, implicit, or assignment cast) that were previously allowed are no longer supported and now result in errors. For more details on list of supported casts, see the documentation [here](/reference-sql/data-types#type-conversion).
 
-## DB version 3.34
+## Firebolt Release Notes - Version 3.34
 **May 2024**
 
 * [Enhancements, changes, and new integrations](#enhancements-changes-and-new-integrations)
@@ -344,7 +424,7 @@ A breaking change has been implemented in raising an error on reading a Parquet/
 
 * Fixed a bug where negation did not check for overflows correctly.
 
-## DB version 3.33
+## Firebolt Release Notes - Version 3.33
 **April 2024**
 
 * [Enhancements, changes, and new integrations](#enhancements-changes-and-new-integrations)
@@ -377,7 +457,7 @@ New breaking change.
 
 * Fixed a bug in `array_position` where searching for `NULL` in an array with non-null elements incorrectly returned a match in some cases. 
 
-## DB version 3.32
+## Firebolt Release Notes - Version 3.32
 **April 2024**
 
 * [New features](#new-features)
@@ -468,7 +548,7 @@ Note that before, it was not an error and resulted in: 9999999999999999775261218
 
 * Fixed a bug involving ['btrim'](/reference-sql/functions-reference/string/btrim) string characters, where invoking `btrim`, `ltrim`, `rtrim`, or `trim` with a literal string but non-literal trim characters could result in an error.
 
-## DB version 3.31
+## Firebolt Release Notes - Version 3.31
 **March 2024**
 
 * [New features](#new-features)
@@ -536,7 +616,7 @@ Fixed a bug where floating point values `-0.0` and `+0.0`, as well as `-nan` and
 
 TRY_CAST from TEXT to NUMERIC now works as expected: if the value cannot be parsed as NUMERIC it produces null.
 
-## DB version 3.30
+## Firebolt Release Notes - Version 3.30
 **November 2023**
 
 * [New features](#new-features)
@@ -564,7 +644,7 @@ Support has been added to allow the ANY_MATCH lambda function to work with nulla
 
 * Fixed an issue where `ARRAY_FIRST` and `ARRAY_FIRST_INDEX` returned an error if the given input was nullable.
 
-## DB version 3.29
+## Firebolt Release Notes - Version 3.29
 **October 2023**
 
 * [New features](#new-features)
@@ -593,7 +673,7 @@ Use `source_file_timestamp - NOW()` instead of `DATE_DIFF('second', source_file_
 
 A new alias [ARRAY_TO_STRING](/reference-sql/functions-reference/array/array-to-string) has been added to function `ARRAY_JOIN`.
 
-## DB version 3.28
+## Firebolt Release Notes - Version 3.28
 **September 2023**
 
 * [Resolved issues](#resolved-issues)
