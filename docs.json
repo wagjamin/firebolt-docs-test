@@ -378,6 +378,7 @@
             "group": "SQL functions",
             "pages": [
               "reference-sql/functions-reference",
+              "reference-sql/functions-reference/functions-glossary",
               {
                 "group": "Aggregation functions",
                 "pages": [
@@ -436,7 +437,6 @@
                   "reference-sql/functions-reference/array/index-of"
                 ]
               },
-              "reference-sql/functions-reference/functions-glossary",
               {
                 "group": "Binary functions",
                 "pages": [
@@ -700,8 +700,8 @@
     }
   },
   "logo": {
-    "light": "/logo/firebolt-logo.png",
-    "dark": "/logo/firebolt-logo.png"
+    "light": "/assets/images/firebolt_logo_website.svg",
+    "dark": "/assets/images/firebolt_logo_website.svg"
   },
   "navbar": {
     "links": [
